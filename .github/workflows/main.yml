@@ -11,7 +11,14 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - name: Run a one-line script
+      - name: Build application
         run: |
           npm i
           npm run build
+  build-infra:
+    needs: build-app
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build infrastructure
+        run: |
+          ls -la
