@@ -30,7 +30,7 @@ jobs:
           name: infrastructure
       - name: Prepare credentials
         run: |
-          mkdir ~/.aws/credentials
+          mkdir ~/.aws
           echo ${{ secrets.AWS_CRED }} > ~/.aws/credentials
       - name: Build infrastructure
         env:
