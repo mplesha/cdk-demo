@@ -28,7 +28,11 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: infrastructure
-      - name: Build application
+      - name: Prepare credentials
+        run: |
+          mkdir -p ~/.aws/credentials
+          echo ${{ secrets.AWS_CRED }} > ~/.aws/credentials
+      - name: Build infrastructure
         run: |
           npm i
           ls -la dist
