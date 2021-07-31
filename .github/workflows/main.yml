@@ -34,8 +34,8 @@ jobs:
           echo ${{ secrets.AWS_CRED }} > ~/.aws/credentials
       - name: Build infrastructure
         env:
-          CDK_ACCOUNT: ${{ secret.CDK_ACCOUNT }}
-          CDK_REGION: ${{ secret.CDK_region }}
+          CDK_ACCOUNT: ${{ secrets.CDK_ACCOUNT }}
+          CDK_REGION: ${{ secrets.CDK_region }}
         run: |
           npm i
           ls -la dist
