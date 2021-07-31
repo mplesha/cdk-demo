@@ -14,4 +14,4 @@ jobs:
       - name: Run a one-line script
         run: |
           npm i
-          ng build
+          npm run build
