@@ -14,9 +14,9 @@ jobs:
       - name: Build application
         run: |
           npm i
-          npm run build --output-path=./infrastructure/dist
-          npm ls -la infrastructure
-          npm ls -la infrastructure/dist
+          npm run build -- --output-path=./infrastructure/dist
+          ls -la infrastructure
+          ls -la infrastructure/dist
       - name: Upload result
         uses: actions/upload-artifact@v2
         with:
