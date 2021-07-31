@@ -19,11 +19,15 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: infrastructure
-          path: infrastructure
+          path: infrastructure/*
   build-infra:
     needs: build-app
     runs-on: ubuntu-latest
     steps:
-      - name: Build infrastructure
+      - name: Download result
+        uses: actions/download-artifact@v2
+        with:
+          name: infrastructure
+      - name: Build application
         run: |
           ls -la
