@@ -15,6 +15,11 @@ jobs:
         run: |
           npm i
           npm run build
+      - name: Upload result
+        uses: actions/upload-artifact@v2
+        with:
+          name: infrastructure
+          path: infrastructure
   build-infra:
     needs: build-app
     runs-on: ubuntu-latest
