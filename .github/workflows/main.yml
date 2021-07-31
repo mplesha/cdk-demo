@@ -30,9 +30,12 @@ jobs:
           name: infrastructure
       - name: Prepare credentials
         run: |
-          mkdir -p ~/.aws/credentials
+          mkdir ~/.aws/credentials
           echo ${{ secrets.AWS_CRED }} > ~/.aws/credentials
       - name: Build infrastructure
+        env:
+          CDK_ACCOUNT: ${{ secret.CDK_ACCOUNT }}
+          CDK_REGION: ${{ secret.CDK_region }}
         run: |
           npm i
           ls -la dist
