@@ -15,8 +15,6 @@ jobs:
         run: |
           npm i
           npm run build -- --output-path=./infrastructure/dist
-          ls -la infrastructure
-          ls -la infrastructure/dist
       - name: Upload result
         uses: actions/upload-artifact@v2
         with:
@@ -32,6 +30,6 @@ jobs:
           name: infrastructure
       - name: Build application
         run: |
-          ls -la
-          ls dist -la
           npm i
+          ls -la dist
+  
