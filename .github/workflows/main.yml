@@ -38,5 +38,5 @@ jobs:
           CDK_REGION: ${{ secrets.CDK_region }}
         run: |
           npm i
-          ls -la dist
+          npx cdk deploy --require-approval never
   
